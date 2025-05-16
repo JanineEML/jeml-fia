@@ -1,0 +1,96 @@
+/*imperative program*/void main() {
+	folgeSpur();
+}
+
+void rechtsUm() {
+	linksUm();
+	linksUm();
+	linksUm();
+}
+
+void kehreUm() {
+	linksUm();
+	linksUm();
+}
+
+boolean vornKornDa() {
+	/*
+	 * Der Hamster prüft NUR auf seinem aktuellen Feld ob ein Korn vorhanden ist, oder nicht.
+	 * Daher muss er erst ein Feld nach vorne gehen und prüft dann, ob ein Korn da ist.
+	 
+	 * Falls ja:
+	 * Bleibe stehen und schließe den Methodenaufruf ab, indem boolean true ausgegeben wird.
+	 
+	 * Falls nicht:
+	 * Kehre zum vorangegangenen Feld zurück. Der Hamster wird sich NICHT in seine vorherige
+	 * Blickrichtung drehen! D.h. ist er zum prüfen nach oben, schaut er danach nach unten.
+	 * Prüft er das Feld rechts von ihm, schaut er danach nach links.
+	 */
+	 
+	vor();
+	
+	// Korn gefunden! Bleibe stehen, keine weitere Aktion (nimmt nichts auf).
+	if (kornDa()) {
+		return true;
+	}
+	
+	// Kein Korn gefunden, drehe um und laufe zum Ursprung zurück.
+	else {
+		kehreUm();
+		vor();
+		
+		return false;
+	}
+}
+
+boolean sucheKorn() {
+	/*
+	 * Arbeitet relativ zur Blickrichtung drei angrenzende Felder ab:
+	 
+	 * Prüfung 1: In Blickrichtung das Feld vor sich prüfen.
+	 * Prüfung 2: Nach P1 schaut der Hamster hinter sich, also einmal nach links drehen
+	 * 				um zu testen ob das Feld rechts vom Urpsrung ein Korn hat
+	 * Prüfung 3: Nach P2 kommt der Hamster vom rechten Feld, schaut also nach links
+	 *				keine weitere Richtungsanpassung nötig um das linke Feld zu testen
+	 * Prüfung 4: Es wird NICHT davon ausgegangen, dass hinter dem Ursprung ein Korn liegt,
+	 				der vollstängiheit halber wird jedoch geprüft. Muss sich nach rechts drehen
+	 */
+	
+	// Prüfung 1: Feld direkt vorne dran
+	if (vornKornDa()) {
+		return true; // Methode wird beendet falls wahr
+	}
+	
+	// Weiter falls Prüfung 1 nicht wahr gewesen ist
+	// Nach Prüfung 1 blickt der Hamster "hinter" sich
+	linksUm();
+	if (vornKornDa()) {
+		return true;
+	}
+	
+	// Prüfe das linke Feld (relativ zur ursprünglichen Blickrichtung)
+	// Keine Anpassung der Blickrichtung nötig, da nach dem Dreh nach links im Schritt
+	// vorher wieder umgekehrt wurde und der Hamster so nach rechts blickt
+	
+	else if (vornKornDa()) {
+		return true;
+	}
+	
+	// Prüfe das hintere Feld (relatif zur ursprünglichen Blickrichtung)
+	rechtsUm();
+	if (vornKornDa()) {
+		return true;
+	}
+	
+	// Kein Feld mit einem Korn gefunden, Hamster bleibt stehen. Durch die vierte Prüfung
+	// blickt der Hamster wieder in die ursprüngliche Richtung
+	else {
+		return false;
+	}
+}
+
+void folgeSpur() {
+	while (sucheKorn()) {
+		nimm();
+	}
+}
