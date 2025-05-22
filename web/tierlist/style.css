@@ -25,3 +25,23 @@ tr, td {
     border-color:aliceblue;
     border-style: groove;
 }
+
+td.S {
+    background-color: cornsilk;
+}
+
+td.A {
+    background-color: blanchedalmond;
+}
+
+td.B {
+    background-color: bisque;
+}
+
+td.C {
+    background-color:wheat;
+}
+
+td.D {
+    background-color: palegoldenrod;
+}

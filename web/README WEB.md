@@ -8,3 +8,8 @@ Wichtige und nützliche [HTML Shortcuts](https://dev.to/hannahgooding/vs-code-sh
 Shift+Alt+F in VSC für pretty print
 
 Um schnell eine Tabelle (oder ähnlichen) Code einzugeben kann '>' benutzt werden! Also bspw. "tr*3>td*2"
+
+## Tierlist
+Um einen kurzen Einstieg in HTML und CSS zu bekommen wurde eine kleine Tier List (vgl. gleichnamigen Unterordner) erstellt:
+
+![](images/tierlist.png)
