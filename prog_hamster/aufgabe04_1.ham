@@ -15,16 +15,16 @@ void kehreUm() {
 
 boolean vornKornDa() {
 	/*
-	 * Der Hamster prüft NUR auf seinem aktuellen Feld ob ein Korn vorhanden ist, oder nicht.
-	 * Daher muss er erst ein Feld nach vorne gehen und prüft dann, ob ein Korn da ist.
+	 Der Hamster prüft NUR auf seinem aktuellen Feld ob ein Korn vorhanden ist, oder nicht.
+	 Daher muss er erst ein Feld nach vorne gehen und prüft dann, ob ein Korn da ist.
 	 
-	 * Falls ja:
-	 * Bleibe stehen und schließe den Methodenaufruf ab, indem boolean true ausgegeben wird.
+	 Falls ja:
+	 Bleibe stehen und schließe den Methodenaufruf ab, indem boolean true ausgegeben wird.
 	 
-	 * Falls nicht:
-	 * Kehre zum vorangegangenen Feld zurück. Der Hamster wird sich NICHT in seine vorherige
-	 * Blickrichtung drehen! D.h. ist er zum prüfen nach oben, schaut er danach nach unten.
-	 * Prüft er das Feld rechts von ihm, schaut er danach nach links.
+	 Falls nicht:
+	 Kehre zum vorangegangenen Feld zurück. Der Hamster wird sich NICHT in seine vorherige
+	 Blickrichtung drehen! D.h. ist er zum prüfen nach oben, schaut er danach nach unten.
+	 Prüft er das Feld rechts von ihm, schaut er danach nach links.
 	 */
 	 
 	vor();
@@ -71,7 +71,6 @@ boolean sucheKorn() {
 	// Prüfe das linke Feld (relativ zur ursprünglichen Blickrichtung)
 	// Keine Anpassung der Blickrichtung nötig, da nach dem Dreh nach links im Schritt
 	// vorher wieder umgekehrt wurde und der Hamster so nach rechts blickt
-	
 	else if (vornKornDa()) {
 		return true;
 	}
