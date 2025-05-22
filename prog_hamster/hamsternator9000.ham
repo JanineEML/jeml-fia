@@ -1,29 +1,33 @@
 /*imperative program*/void main() {
 	/*
-	 * Der Hamster funktioniert aktuell in Relation zu seinem Startfeld (!)
-	 * D.h. wenn er auf (3,1) initialisiert wird startet die interne Rechnung
-	 * trz. bei (0,0)
+	 Der Hamster funktioniert aktuell NUR in Relation zu seinem Startfeld (!)
+	 D.h. wenn er auf (3,1) initialisiert wird startet die interne Rechnung
+	 trz. bei (0,0)
 	 */
 
 	folgeSpur();
+	laufeZumStart();
 }
 
-/* Richtung muss mit modulo 3 verrechnet werden (durch 3 teilen und Rest ausgeben)
- * 0 = Osten, 1 = Norden, 2 = Westen, 3 = Süden
- * 4 Variablen, daher muss später modulo 4 benutzt werden um Rest 0, 1, 2, 3 zu rechnen.
+/*
+ Initialisiere globale Variable um die Richtung zu tracken. Hamster dreht sich immer nach links.
+ 
+ 0 entspricht Osten bzw. nach rechts
+ 1 entspricht Norden bzw. nach oben
+ 2 entspricht Westen bzw. nach links
+ 3 entspricht Süden bzw. nach unten
  */
 int richtung = 0;
 
 void updateRichtung() {
 	/*
-	 * 0 entspricht Osten bzw. nach rechts
-	 * 1 entspricht Norden bzw. nach oben
-	 * 2 entspricht Westen bzw. nach links
-	 * 3 entspricht Süden bzw. nach unten
+	 Hilfsfunktion um richtung zu updaten: Bei Drehung nach links, wird richtung um eins erhöht.
+	 Nach der Erhöhung wird geprüft ob die Variable größer 3 ist. Da richtung innerhalb des
+	 Intervalls [0, 3] bleiben soll wird mit modulo 4 gerechnet (Teilen durch 4, behalte Rest).
 	 */
-	 
 	richtung++;
-	
+
+	// Sobald größer als 3 wird modulo 4 benutzt um wieder auf einem Wert zwischen 0 und 3 zu landen.
 	if (richtung > 3) {
 		richtung = richtung % 4;
 	}
@@ -36,6 +40,7 @@ int y = 0;
 // Je nachdem in welche Richtung der Hamster blickt wenn er ein Feld
 // nach vorne läuft, muss der jeweilge x oder y Wert eins hochzählen.
 void updateKoordinaten() {
+
 	// Richtung 0 entspricht Osten, also x+1
 	if (richtung == 0) {
 		x++;
@@ -58,31 +63,33 @@ void updateKoordinaten() {
 }
 
 /* 
- * Hamster soll sich x-mal nach links drehen und aktualisiert bei jeder Drehung seine aktuelle Blickrichtung
+ Hamster soll sich x-mal nach links drehen und aktualisiert bei jeder Drehung seine aktuelle Blickrichtung
  */
 void linksUmMitUpdate(int anzahlDrehungen) {
 	for(int i = 0; i < anzahlDrehungen; i++) {
 		linksUm();
 		updateRichtung();
-		System.out.println("aktuelle Richtung: " + richtung);
 	}
 }
 
 /* 
- * Hamster soll x-mal nach vorne laufen und aktualisiert seine Koordinaten hierbei.
- * Dafür wird die Funktion updateKoordinaten() aufgerufen, welche prüft in welche
- * Richtung der Hamster gerade läuft (Blickrichtung)
+ Hamster soll x-mal nach vorne laufen und aktualisiert seine Koordinaten mit. Dafür wird die Funktion
+ updateKoordinaten() aufgerufen, welche prüft in welche Richtung der Hamster gerade läuft (Blickrichtung)
  */
 void vorMitUpdate(int anzahlFelder) {
-	for(int i = 0; i < anzahlFelder; i++) {
+	// Zählvariable i um die Schleife zu beenden wenn die vorgegebene 
+	int i = 0;
+	while (vornFrei() && i < anzahlFelder) {
 		vor();
 		updateKoordinaten();
+		
+		i++;
 	}
 }
 
 /*
- * Hamster dreht sich OHNE Aktualisierung der Richtung. Wird nur innerhalb anderer Methoden
- * verwendet, wenn er sich danach wieder in die Ausgangsposition wenden soll.
+ Hamster dreht sich OHNE Aktualisierung der Richtung. Wird nur innerhalb anderer Methoden
+ verwendet, wenn er sich danach wieder in die Ausgangsposition wenden soll.
  */
 void rechtsUm() {
 	linksUm();
@@ -99,9 +106,10 @@ boolean linksFrei() {
 	// Hamster muss sich nach links drehen um vornFrei() aufrufen zu können
 	linksUm();
 	
-	/* Nach dem Check dreht sich der Hamster wieder zurück
-	 * Da return die Funktion beendet, muss sich der Hamster
-	 * vorher zurückdrehen
+	/* 
+	 Nach dem Check dreht sich der Hamster wieder zurück
+	 Da return die Funktion beendet, muss sich der Hamster
+	 vorher zurückdrehen
 	 */
 	 
 	if (vornFrei()) {
@@ -161,41 +169,6 @@ void gibAlle() {
 	}
 }
 
-void sucheKorn(int anzahlFelder) {
-	for(int i = 0; i < anzahlFelder; i++) {
-		vor();
-		
-		// Prüfe ob auf dem neuen Feld ein Korn ist und nehme es auf.
-		nimmAlle();
-	}
-}
-
-void bisZurWand() {
-	/* Die untere Funktion bisZurWand(sucheKoerner) wird NUR aufgerufen wenn ein boolean
-	 * übergeben wird, ansonsten wird diese Funktion aufgerufen und der Hamster wird weder
-	 * suchen noch sammeln.
-	 */
-	
-	while(vornFrei()) {
-		vor();
-	}
-}
-
-void bisZurWand(boolean sucheKoerner) {
-	while(vornFrei()) {
-		vor();
-
-		/* if (sucheKoerner && kornDa()) {
-		 * Da in der eigenen Methode nimmAlle() schon geprüft wird ob ein Korn auf dem Feld liegt
-		 * ist der UND Check hier unnötig.
-		 */
-		
-		if(sucheKoerner) {
-			nimmAlle();
-		}
-	}
-}
-
 int xRichtung(int xWert) {
 	if (xWert < 0) {
 		return 2;
@@ -218,9 +191,9 @@ int yRichtung(int yWert) {
 
 void ausrichten(int richtungZiel) {
 	/*
-	 * Der Hamster soll sich in die Zielrichtung drehen. Bei jeder Drehung zählt
-	 * er die Blickrichtung um 1 hoch (linkUmMitUpdate()). Durch den Abgleich mit
-	 * der zielRichtung dreht er sich solange bis die beiden Werte gleich sind.
+	 Der Hamster soll sich in die Zielrichtung drehen. Bei jeder Drehung zählt
+	 er die Blickrichtung um 1 hoch (linkUmMitUpdate()). Durch den Abgleich mit
+	 der zielRichtung dreht er sich solange bis die beiden Werte gleich sind.
 	 */
 	
 	while (richtungZiel != richtung) {
@@ -260,31 +233,41 @@ void laufeZu(int xZiel, int yZiel) {
 	vorMitUpdate(yWeg);
 }
 
-boolean vornKornDa() {
+void laufeZumStart() {
+	laufeZu(0,0);
+	
+	// Soll sich auch zur ersten Blickrichtung ausrichten (Osten == 0)
+	while (richtung != 0) {
+		linksUmMitUpdate(1);
+	}
+}
+
+boolean vornKorn() {
 	/*
-	 * Der Hamster prüft NUR auf seinem aktuellen Feld ob ein Korn vorhanden ist, oder nicht.
-	 * Daher muss er erst ein Feld nach vorne gehen und prüft dann, ob ein Korn da ist.
+	 Der Hamster prüft NUR auf seinem aktuellen Feld ob ein Korn vorhanden ist, oder nicht.
+	 Daher muss er erst ein Feld nach vorne gehen und dann prüfen.
 	 
-	 * Falls ja:
-	 * Bleibe stehen und schließe den Methodenaufruf ab, indem boolean true ausgegeben wird.
+	 Falls ja:
+	 Bleibe stehen und beende den Methodenaufruf.
 	 
-	 * Falls nicht:
-	 * Kehre zum vorangegangenen Feld zurück. Der Hamster wird sich NICHT in seine vorherige
-	 * Blickrichtung drehen! D.h. ist er zum prüfen nach oben, schaut er danach nach unten.
-	 * Prüft er das Feld rechts von ihm, schaut er danach nach links.
+	 Falls nicht:
+	 Kehre zum vorangegangenen Feld zurück, drehe dich zur Ausgangsrichtung.
+	 
+	 Funktion gibt ein boolean aus, weil diese für Wahrheitschecks benutzt werden soll.
 	 */
 	 
 	vorMitUpdate(1);
 	
-	// Korn gefunden! Bleibe stehen, keine weitere Aktion (nimmt nichts auf).
+	// Korn gefunden! Bleibe stehen.
 	if (kornDa()) {
 		return true;
 	}
 	
 	// Kein Korn gefunden, drehe um und laufe zum Ursprung zurück.
 	else {
-		linksUmMitUpdate(2);
+		linksUmMitUpdate(2); // kehre zum ursprünglichen Feld zurück.
 		vorMitUpdate(1);
+		linksUmMitUpdate(2); // drehe dich zur Ausgangsrichtung zurück.
 		
 		return false;
 	}
@@ -292,45 +275,41 @@ boolean vornKornDa() {
 
 boolean sucheKorn() {
 	/*
-	 * Arbeitet relativ zur Blickrichtung drei angrenzende Felder ab:
+	 Arbeitet relativ zur Blickrichtung drei angrenzende Felder ab:
 	 
-	 * Prüfung 1: In Blickrichtung das Feld vor sich prüfen.
-	 * Prüfung 2: Nach P1 schaut der Hamster hinter sich, also einmal nach links drehen
-	 * 				um zu testen ob das Feld rechts vom Urpsrung ein Korn hat
-	 * Prüfung 3: Nach P2 kommt der Hamster vom rechten Feld, schaut also nach links
-	 *				keine weitere Richtungsanpassung nötig um das linke Feld zu testen
-	 * Prüfung 4: Es wird NICHT davon ausgegangen, dass hinter dem Ursprung ein Korn liegt,
-	 				der vollstängiheit halber wird jedoch geprüft. Muss sich nach rechts drehen
+	 Prüfung 1: In Blickrichtung das Feld vor sich prüfen.
+	 Prüfung 2: Nach P1 schaut der Hamster hinter sich, also einmal nach links drehen
+	 			um zu testen ob das Feld rechts vom Urpsrung ein Korn hat
+	 Prüfung 3: Nach P2 kommt der Hamster vom rechten Feld, schaut also nach links
+	 			keine weitere Richtungsanpassung nötig um das linke Feld zu testen
+	 Prüfung 4: Es wird NICHT davon ausgegangen, dass hinter dem Ursprung ein Korn liegt,
+	 			der vollstängiheit halber wird jedoch geprüft. Muss sich nach rechts drehen
 	 */
 	
 	// Prüfung 1: Feld direkt vorne dran
-	if (vornKornDa()) {
+	if (vornFrei() && vornKorn()) {
 		return true; // Methode wird beendet falls wahr
 	}
 	
-	// Weiter falls Prüfung 1 nicht wahr gewesen ist
-	// Nach Prüfung 1 blickt der Hamster "hinter" sich
+	// P2: Falls beim vorderen Feld nichts war dreht sich der Hamster ein Feld weiter nach links
 	linksUmMitUpdate(1);
-	if (vornKornDa()) {
+	if (vornFrei() && vornKorn()) {
 		return true;
 	}
 	
-	// Prüfe das linke Feld (relativ zur ursprünglichen Blickrichtung)
-	// Keine Anpassung der Blickrichtung nötig, da nach dem Dreh nach links im Schritt
-	// vorher wieder umgekehrt wurde und der Hamster so nach rechts blickt
-	
-	else if (vornKornDa()) {
+	// P3: Hamster überspringt vorerst das Feld hinter sich (Richtung aus welcher er kam)
+	linksUmMitUpdate(2);
+	if (vornFrei() && vornKorn()) {
 		return true;
 	}
 	
-	// Prüfe das hintere Feld (relatif zur ursprünglichen Blickrichtung)
-	linksUmMitUpdate(3); // 3x links entspricht 1x rechts
-	if (vornKornDa()) {
+	// P4: Prüfe das hintere Feld
+	linksUmMitUpdate(1);
+	if (vornFrei() && vornKorn()) {
 		return true;
 	}
 	
-	// Kein Feld mit einem Korn gefunden, Hamster bleibt stehen. Durch die vierte Prüfung
-	// blickt der Hamster wieder in die ursprüngliche Richtung
+	// P4: Kein Feld mit einem Korn gefunden, Hamster bleibt stehen.
 	else {
 		return false;
 	}
