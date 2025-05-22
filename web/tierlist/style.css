@@ -1,0 +1,27 @@
+body {
+    background-color: beige;
+}
+
+h1 {
+    color: brown;
+    text-align: left;
+}
+
+table {
+    border: 1px solid;
+}
+
+th {
+    color: aliceblue;
+    background-color: cadetblue;
+    padding: 15px;
+}
+
+tr, td {
+    padding: 15px;
+    text-align: center;
+    background-color: antiquewhite;
+    border: 1px solid;
+    border-color:aliceblue;
+    border-style: groove;
+}
