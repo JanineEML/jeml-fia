@@ -1,0 +1,89 @@
+Konvertieren Sie folgenden Text in eine Markdown-Datei (Endung .md), so, dass der Inhalt
+wie im Vorgabebild (vorgabe_vscode.jpeg) in Visual Studio Code dargestellt wird:
+
+
+
+Willkommen
+
+Hier, auf dieser Seite, gibt's allerlei Kram zu finden!
+
+Das Logo gibt es u. a. hier zu finden:
+https://de.m.wikipedia.org/wiki/Datei:SRH_Bildung.svg
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+
+Filme
+
+50 first Dates
+Mad Max: Fury Road
+The Big Short
+Parasite
+Blade Runner 2049
+
+
+Links
+
+Hier noch ein paar nützliche Links für Softwareentwickler und Designer:
+
+W3C HTML Validator: https://validator.w3.org/
+Markdown Infos
+	Übersicht: https://markdown.de/
+	Obsidian: https://obsidian.md/ (Markdown Editor)
+	Cheat Sheet: https://www.heise.de/downloads/18/1/1/6/7/1/0/3/Markdown-CheatSheet-Deutsch.pdf (PDF auf deutsch)
+HTML Cheat Sheets
+	mdn web docs_: https://developer.mozilla.org/de/docs/Learn_web_development/Howto/Solve_HTML_problems/Cheatsheet
+	QuickRef: https://quickref.me/html.html
+Platzhaltertext generieren: https://loremipsum.de/
+
+
+I <3 ASCII Art
+
+Zieht euch diese Katze rein!
+
+    /\_____/\
+   /  o   o  \
+  ( ==  ^  == )
+   )         (
+  (           )
+ ( (  )   (  ) )
+(__(__)___(__)__)
+
+
+Knallharte Fakten
+
+Falls ihr mal vergesst, welches Bundesland nochmal welche Hauptstadt hat,
+dann guckt hier einfach gerne nach.
+Hab sogar noch ein paar Bonus-facts mit eingebaut!
+
+
+Land                    Abk.  Haupt­stadt   Fläche (km^2) Einwohner (Mio.)
+Baden-Württemberg       BW    Stuttgart    35.748        11,280
+Bayern                  BY    München      70.542        13,369
+Berlin                  BE    —            891           3,755
+Brandenburg             BB    Potsdam      29.654        2,573
+Bremen                  HB    —            420           0,685
+Hamburg                 HH    —            755           1,892
+Hessen                  HE    Wiesbaden    21.116        6,391
+Mecklenburg-Vorpommern  MV    Schwerin     23.295        1,628
+Niedersachsen           NI    Hannover     47.710        8,140
+Nordrhein-Westfalen     NW    Düsseldorf   34.112        18,139
+Rheinland-Pfalz         RP    Mainz        19.858        4,159
+Saarland                SL    Saarbrücken  2.571         0,993
+Sachsen                 SN    Dresden      18.450        4,086
+Sachsen-Anhalt          ST    Magdeburg    20.459        2,187
+Schleswig-Holstein      SH    Kiel         15.804        2,953
+Thüringen               TH    Erfurt       16.202        2,127
+
+
+HTML
+
+Diese Seite lässt sich auch als _purer_ HTML-Code darstellen. Im Verlgeich zu Markdown würde das dann z. B. so aussehen:
+
+<h1>Mein Titel</h1>
+<p>
+    Hier ein <em>Paragraf</em> mit Text.
+    <div>Un hier ein generischer "HTML-Container"</div>
+</p>
+
+Zitate gibt es sowohl in HTML, als auch in Markdown: "Nicht vergessen: \<div/\> gibt es nicht!"
