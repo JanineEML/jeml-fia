@@ -56,7 +56,7 @@ dann guckt hier einfach gerne nach.
 Hab sogar noch ein paar Bonus-facts mit eingebaut!
 
 
-**Land** | **Abk.** | **Haupt­stadt** | **Fläche (km$^2$)** |**Einwohner (Mio.)** 
+**Land** | **Abk.** | **Haupt­stadt** | **Fläche (km<sup>2</sup>)** |**Einwohner (Mio.)** 
 ---------|----------|----------------|---------------------|----------------------
 Baden-Württemberg     |  BW  |  Stuttgart  |  35.748    |    11,280 
 Bayern                |  BY  |  München    |  70.542    |    13,369 
@@ -80,7 +80,7 @@ Thüringen             |  TH  |  Erfurt     |  16.202    |    2,127
 
 Diese Seite lässt sich auch als _purer_ HTML-Code darstellen. Im Verlgeich zu Markdown würde das dann z. B. so aussehen:
 
-```
+```html
 <h1>Mein Titel</h1>
 <p>
     Hier ein <em>Paragraf</em> mit Text.
@@ -90,4 +90,4 @@ Diese Seite lässt sich auch als _purer_ HTML-Code darstellen. Im Verlgeich zu M
 
 
 
-> Zitate gibt es sowohl in HTML, als auch in Markdown: "Nicht vergessen: \<div/\> gibt es nicht!"
+> Zitate gibt es sowohl in HTML, als auch in Markdown: "Nicht vergessen: \<div/> gibt es nicht!"
