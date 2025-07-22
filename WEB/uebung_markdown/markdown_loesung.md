@@ -84,7 +84,7 @@ Diese Seite lässt sich auch als _purer_ HTML-Code darstellen. Im Verlgeich zu M
 <h1>Mein Titel</h1>
 <p>
     Hier ein <em>Paragraf</em> mit Text.
-    <div>Un hier ein generischer "HTML-Container"</div>
+    <div>Und hier ein generischer "HTML-Container"</div>
 </p>
 ```
 
