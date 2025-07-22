@@ -27,8 +27,8 @@ Hier noch ein paar nützliche Links für Softwareentwickler und Designer:
 - [W3C HTML Validator](https://validator.w3.org/)
 - Markdown Infos
 	1. [Übersicht](https://markdown.de/)
-	2. [Obsidian](https://obsidian.md/) (Markdown Editor)
-	3. [Cheat Sheet](https://www.heise.de/downloads/18/1/1/6/7/1/0/3/Markdown-CheatSheet-Deutsch.pdf) (PDF auf deutsch)
+	1. [Obsidian](https://obsidian.md/) (Markdown Editor)
+	1. [Cheat Sheet](https://www.heise.de/downloads/18/1/1/6/7/1/0/3/Markdown-CheatSheet-Deutsch.pdf) (PDF auf deutsch)
 - HTML Cheat Sheets
     - [mdn web docs_](https://developer.mozilla.org/de/docs/Learn_web_development/Howto/Solve_HTML_problems/Cheatsheet)
 	- [QuickRef](https://quickref.me/html.html)
@@ -37,7 +37,7 @@ Hier noch ein paar nützliche Links für Softwareentwickler und Designer:
 
 ## I <span style="color:red">&#9829;</span> ASCII Art
 
-Zieht euch diese Katze rein! 
+Zieht euch diese Katze rein!
 ```
     /\_____/\
    /  o   o  \
@@ -56,24 +56,24 @@ dann guckt hier einfach gerne nach.
 Hab sogar noch ein paar Bonus-facts mit eingebaut!
 
 
-| **Land** | **Abk.** | **Haupt­stadt** | **Fläche (km$^2$)** | **Einwohner (Mio.)** |
-|----------|----------|----------------|---------------------|----------------------|
-Baden-Württemberg     |  BW  |  Stuttgart  |  35.748    |    11,280 |
-Bayern                |  BY  |  München    |  70.542    |    13,369 |
-Berlin                |  BE  |  —          |  891       |    3,755 |
-Brandenburg           |  BB  |  Potsdam    |  29.654    |    2,573 |
-Bremen                |  HB  |  —          |  420       |    0,685 |
-Hamburg               |  HH  |  —          |  755       |    1,892 |
-Hessen                |  HE  |  Wiesbaden  |  21.116    |    6,391 |
-Mecklenburg-Vorpommern|  MV  |  Schwerin   |  23.295    |    1,628 |
-Niedersachsen         |  NI  |  Hannover   |  47.710    |    8,14 |
-Nordrhein-Westfalen   |  NW  |  Düsseldorf |  34.112    |    18,139 |
-Rheinland-Pfalz       |  RP  |  Mainz      |  19.858    |    4,159 |
-Saarland              |  SL  |  Saarbrücken|  2.571     |    0,993 |
-Sachsen               |  SN  |  Dresden    |  18.450    |    4,086 |
-Sachsen-Anhalt        |  ST  |  Magdeburg  |  20.459    |    2,187 |
-Schleswig-Holstein    |  SH  |  Kiel       |  15.804    |    2,953 |
-Thüringen             |  TH  |  Erfurt     |  16.202    |    2,127 |
+**Land** | **Abk.** | **Haupt­stadt** | **Fläche (km$^2$)** |**Einwohner (Mio.)** 
+---------|----------|----------------|---------------------|----------------------
+Baden-Württemberg     |  BW  |  Stuttgart  |  35.748    |    11,280 
+Bayern                |  BY  |  München    |  70.542    |    13,369 
+Berlin                |  BE  |  —          |  891       |    3,755
+Brandenburg           |  BB  |  Potsdam    |  29.654    |    2,573 
+Bremen                |  HB  |  —          |  420       |    0,685 
+Hamburg               |  HH  |  —          |  755       |    1,892 
+Hessen                |  HE  |  Wiesbaden  |  21.116    |    6,391 
+Mecklenburg-Vorpommern|  MV  |  Schwerin   |  23.295    |    1,628 
+Niedersachsen         |  NI  |  Hannover   |  47.710    |    8,14 
+Nordrhein-Westfalen   |  NW  |  Düsseldorf |  34.112    |    18,139 
+Rheinland-Pfalz       |  RP  |  Mainz      |  19.858    |    4,159 
+Saarland              |  SL  |  Saarbrücken|  2.571     |    0,993 
+Sachsen               |  SN  |  Dresden    |  18.450    |    4,086 
+Sachsen-Anhalt        |  ST  |  Magdeburg  |  20.459    |    2,187 
+Schleswig-Holstein    |  SH  |  Kiel       |  15.804    |    2,953 
+Thüringen             |  TH  |  Erfurt     |  16.202    |    2,127 
 
 
 ## HTML
