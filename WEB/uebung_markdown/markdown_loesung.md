@@ -2,7 +2,7 @@
 
 Hier, auf dieser Seite, gibt's allerlei Kram zu finden!
 
-![](srh.svg)
+![SRH-Bildung Logo](srh.svg)
 
 Das Logo gibt es u. a. hier zu finden:
 https://de.m.wikipedia.org/wiki/Datei:SRH_Bildung.svg
@@ -30,8 +30,8 @@ Hier noch ein paar nützliche Links für Softwareentwickler und Designer:
 	2. [Obsidian](https://obsidian.md/) (Markdown Editor)
 	3. [Cheat Sheet](https://www.heise.de/downloads/18/1/1/6/7/1/0/3/Markdown-CheatSheet-Deutsch.pdf) (PDF auf deutsch)
 - HTML Cheat Sheets
-	4. [mdn web docs_](https://developer.mozilla.org/de/docs/Learn_web_development/Howto/Solve_HTML_problems/Cheatsheet)
-	5. [QuickRef](https://quickref.me/html.html)
+    - [mdn web docs_](https://developer.mozilla.org/de/docs/Learn_web_development/Howto/Solve_HTML_problems/Cheatsheet)
+	- [QuickRef](https://quickref.me/html.html)
 - [Platzhaltertext generieren](https://loremipsum.de/)
 
 
