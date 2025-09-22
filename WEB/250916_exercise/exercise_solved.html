@@ -25,21 +25,21 @@
             <td>code</td>
             <td>nein</td>
             <td>inline</td>
-            <td>Text als Code hervorheben</td>
+            <td>Text als Code hervorheben, im Gegensatz zu &lt;pre> <strong>nicht</strong> vorformattiert.</td>
         </tr>
         <tr>
-            <td><code>&lt;h1></code> bis <code></code>&lt;h6></code></td>
+            <td><code>&lt;h1></code> bis <code>&lt;h6></code></td>
             <td>heading (1 bis 6)</td>
             <td>nein</td>
             <td>block</td>
-            <td>Text als Überschrift auszeichnen</td>
+            <td>Text als Überschrift auszeichnen (6 Abstufungen möglich, <code></code> )</td>
         </tr>
         <tr>
             <td><code>&lt;p></code></td>
             <td>paragraph</td>
             <td>nein</td>
             <td>block</td>
-            <td>Einzelner Paragraph, beginnt neuen Paragraph mit kleinem Abstand</td>
+            <td>Einzelner Paragraph, beginnt neuen Paragraph mit kleinem Abstand. Man kann keine Pragrafen ineinander schachteln.</td>
         </tr>
         <tr>
             <td><code>&lt;br></code></td>
@@ -118,10 +118,17 @@
             <td>inline</td>
             <td>Soll eine Textspanne besonders auszeichnen (bspw. Schriftart)</td>
         </tr>
+        <tr>
+            <td><code>&lt;pre></code></td>
+            <td>preformatted</td>
+            <td>nein</td>
+            <td>block</td>
+            <td>Für vorformattierten Text (Leerzeichen und Tabs werden in Gänze angezeigt)</td>
+        </tr>
     </table>
 
     <h2>Ihr Stundenplan (simples Layout)</h2>
-    <p>Bauen Sie Ihren Stundenplan für <em>diese Woche</em> als simple HTML-Tabelle nach. Nur die Fachbezeichnung reicht. Nutzen sie das <code>rowspan</code> Attribut. Hier ein Beispiel:</p>
+    <p>Bauen Sie Ihren Stundenplan für <em>diese Woche</em> als simple HTML-Tabelle nach. Nur die Fachbezeichnung reicht. Nutzen sie das <code>rowspan</code> Attribut. Hier ein Beispiel:
 
     <table border="1">
         <caption>
