@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Übung - Tabellen</h1>
+    <hr>
+
+
+    <h2>HTML Tags</h2>
+
+    <table border="1">
+        <tr>
+            <th>Tag</th>
+            <th>Bezeichnung</th>
+            <th>Standalone?</th>
+            <th>Typ</th>
+            <th>Beschreibung</th>
+        </tr>
+        <tr>
+            <td><code>&lt;code></code></td>
+            <td>code</td>
+            <td>nein</td>
+            <td>inline</td>
+            <td>Text als Code hervorheben, im Gegensatz zu &lt;pre> <strong>nicht</strong> vorformattiert.</td>
+        </tr>
+        <tr>
+            <td><code>&lt;h1></code> bis <code>&lt;h6></code></td>
+            <td>heading (1 bis 6)</td>
+            <td>nein</td>
+            <td>block</td>
+            <td>Text als Überschrift auszeichnen (6 Abstufungen möglich, <code></code> )</td>
+        </tr>
+        <tr>
+            <td><code>&lt;p></code></td>
+            <td>paragraph</td>
+            <td>nein</td>
+            <td>block</td>
+            <td>Einzelner Paragraph, beginnt neuen Paragraph mit kleinem Abstand. Man kann keine Pragrafen ineinander schachteln.</td>
+        </tr>
+        <tr>
+            <td><code>&lt;br></code></td>
+            <td>line break</td>
+            <td>ja</td>
+            <td>inline</td>
+            <td>Bricht die Zeile um, jedoch ohne Abstand</td>
+        </tr>
+        <tr>
+            <td><code>&lt;em></code></td>
+            <td>emphasis</td>
+            <td>nein</td>
+            <td>inline</td>
+            <td>Text kursiv schreiben, mit semantischer Funktion</td>
+        </tr>
+        <tr>
+            <td><code>&lt;strong></code></td>
+            <td>strong</td>
+            <td>nein</td>
+            <td>inline</td>
+            <td>Text fett drucken, mit semantischer Funktion</td>
+        </tr>
+        <tr>
+            <td><code>&lthr></code></td>
+            <td>horizontal rule</td>
+            <td>ja</td>
+            <td>block</td>
+            <td>Zieht einen horizontalen Trennstrich über die ganze Breite</td>
+        </tr>
+        <tr>
+            <td><code>&lt;ol></code></td>
+            <td>ordered list</td>
+            <td>nein</td>
+            <td>block</td>
+            <td>Geordnete Liste, Elemente mit dem tag <code>&lt;li></code></td>
+        </tr>
+        <tr>
+            <td><code>&lt;ul></code></td>
+            <td>unordered list</td>
+            <td>nein</td>
+            <td>block</td>
+            <td>Ungeordnete Liste</td>
+        </tr>
+        <tr>
+            <td><code>&lt;meta></code></td>
+            <td>meta</td>
+            <td>ja</td>
+            <td>---</td>
+            <td>Meta Informationen, werden nicht lesbar dargestellt.</td>
+        </tr>
+        <tr>
+            <td><code>&lt;a></code></td>
+            <td>anker</td>
+            <td>nein</td>
+            <td>inline</td>
+            <td>Ein sog. <em>Hyperlink</em> zu einem anderen HTML Dokument oder sonstgen <q>Web resource.</q></td>
+        </tr>
+        <tr>
+            <td><code>&ltimg></code></td>
+            <td>image</td>
+            <td>ja</td>
+            <td>inline-Block</td>
+            <td>Ein Bild einfügen und darstellen</td>
+        </tr>
+        <tr>
+            <td><code>&lt;div></code></td>
+            <td>division</td>
+            <td>nein</td>
+            <td>block</td>
+            <td>Soll einen Textblock gruppieren um es später gezielt auszuzeichnen (bspw. Schriftart)</td>
+        </tr>
+        <tr>
+            <td><code>&lt;span></code></td>
+            <td>span</td>
+            <td>nein</td>
+            <td>inline</td>
+            <td>Soll eine Textspanne gruppieren um es später gezielt auszeichnen (bspw. Schriftart)</td>
+        </tr>
+        <tr>
+            <td><code>&lt;pre></code></td>
+            <td>preformatted</td>
+            <td>nein</td>
+            <td>block</td>
+            <td>Für vorformattierten Text (Leerzeichen und Tabs werden in Gänze angezeigt)</td>
+        </tr>
+    </table>
+
+    <h2>Ihr Stundenplan (simples Layout)</h2>
+    <p>Bauen Sie Ihren Stundenplan für <em>diese Woche</em> als simple HTML-Tabelle nach. Nur die Fachbezeichnung reicht. Nutzen sie das <code>rowspan</code> Attribut. Hier ein Beispiel:
+
+    <table border="1">
+        <caption>
+            21232502 - FIA GAR gültig ab: <small>15.9. - 21.9. (38)</small>
+        </caption>
+
+        <tr>
+            <th></th>
+            <th>Montag</th>
+            <th>Dienstag</th>
+            <th>Mittwoch</th>
+            <th>Donnerstag</th>
+            <th>Freitag</th>
+        </tr>
+        <tr>
+            <td>8:00<br>8:45</td>
+            <td>FU</td>
+            <td>FU</td>
+            <td>FU</td>
+            <td>FU</td>
+            <td>FU</td>
+        </tr>
+        <tr>
+            <td>8:55<br>9:40</td>
+            <td rowspan="2"><b>BS</b> (<b>WIN</b> KUE <b>BS06-E01</b></td>
+            <td rowspan="4"><b>JAVA</b> BOE <b>BS06-E01</b></td>
+            <td rowspan="2"><b>NET</b> IZEL <b>BS06-E01</b></td>
+            <td rowspan="2"><b>BW (LIN</b> CRA <b>BS06-E01</b></td>
+            <td rowspan="2"><b>DB</b> KUE <b>BS06-E01</b></td>
+        </tr>
+        <tr>
+            <td>9:40<br>10:25</td>
+
+            
+            
+            
+            
+        </tr>
+        <tr>
+            <td>10:35<br>11:20</td>
+            <td rowspan="2"><b>DB</b> KUE <b>BS06-E01</b></td>
+            
+            <td rowspan="2"><b>WEB</b> PAU <b>BS06-E01</b></td>
+            <td rowspan="2"><b>ENG B1</b> BOA <b>BS06-E01</b></td>
+            <td rowspan="2"><b>REW</b> SCW <b>BS06-E01</b></td>
+        </tr>
+        <tr>
+            <td>11:20<br>12:05</td>
+            
+            
+            
+            
+            
+        </tr>
+        <tr>
+            <td>13:05<br>13:50</td>
+            <td><b>DBK</b> BOA <b>BS06-E01</b></td>
+            <td rowspan="2"><b>WEB</b> PAU <b>BS06-E01</b></td>
+            <td rowspan="2"><b>JAVA</b> BOE <b>BS06-E01</b></td>
+            <td rowspan="2"><b>ITSI</b> MUM <b>BS06-E01</b></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>13:50<br>14:35</td>
+            <td><b>DBK</b> BOA <b>BS06-E01</b></td>
+            
+            
+            
+            <td></td>
+        </tr>
+        <tr>
+            <td>14:45<br>15:30</td>
+            <td rowspan="2"><b>NET</b> IZEL <b>BS06-E01</b></td>
+            <td><b>WEB</b> PAU <b>BS06-E01</b></td>
+            <td><s><b>CT</b> KUN <b>BS06-E01</b></s></td>
+            <td><s><b>SWT</b> MIT <b>BS06-E01</b></s></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>15:30<br>16:15</td>
+            
+            <td><b>WEB</b> PAU <b>BS06-E01</b></td>
+            <td><s><b>CT</b> KUN <b>BS06-E01</b></s></td>
+            <td><s><b>SWT</b> MIT <b>BS06-E01</b></s></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>16:25<br>17:10</td>
+            <td>FU</td>
+            <td>FU</td>
+            <td>FU</td>
+            <td>FU</td>
+            <td></td>
+        </tr>
+    </table>
+
+    <h2>Noch mehr HTML Tags für Auflistungen</h2>
+    <dl>
+        <dt><abbr title="definition list">dl</abbr></dt>
+        <dd>Leitet eine <em>Definitionsliste</em> ein.</dd>
+
+        <dt><abbr title="definition term">dt</abbr></dt>
+        <dd>Umschließt die zu definierende Bezeichnung.</dd>
+
+        <dt><abbr title="definition description">dd</abbr></dt>
+        <dd>Umschließt die Definition bzw. den Beschreibungstext der Beschreibung.</dd>
+    </dl>
+
+    <p><small><strong>Tipp:</strong> Für die gepunktete Unterstreichung, recherchieren Sie <code>&lt;abbr></code></small><br>
+    <small><strong>Tipp:</strong> Tipps stehen in einem <code>&lt;small></code>-Element</small></p>
+
+    <h2>Tabellen mit <code>&lt;theader></code>, <code>&lt;tfooter></code> und <code>&lt;tbody></code></h2>
+    <p>Denken Sie sich eine Tabelle aus, die sich sinnvoll in Kopf-, Körper und Fußzeile aufteilen lässt und bauen Sie diese dann als HTML Tabelle.</p>
+    
+    <table border="1">
+        <caption>Ausgaben letzter Monat</caption>
+
+        <thead>
+            <tr>
+                <th></th>
+                <th>Woche 1</th>
+                <th>Woche 2</th>
+                <th>Woche 3</th>
+                <th>Woche 4</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <th>Lebensmittel</th>
+                <td>56€</td>
+                <td>73€</td>
+                <td>27€</td>
+                <td>44€</td>
+            </tr>
+            <tr>
+                <th>Werkstatt</th>
+                <td>174€</td>
+                <td>-</td>
+                <td>-</td>
+                <td>56€</td>
+            </tr>
+            <tr>
+                <th>Tierarzt</th>
+                <td>-</td>
+                <td>-</td>
+                <td>223€</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <th>Gesamt:</th>
+                <td>230€</td>
+                <td>73€</td>
+                <td>250€</td>
+                <td>100€</td>
+            </tr>
+        </tfoot>
+    </table>
+    
+    <p>Fällt Ihnen auch ein Beispiel ein, in dem mehr als eine Tabellenzeile in der Kopfzeile steht?<br>
+    <small><strong>Tipp:</strong> Vielleicht ist dafür das Attribut <code>colspan</code> nützlich.</small></p>
+
+    <table border="1">
+        <caption>Ausgaben letzter 4 Wochen</caption>
+
+        <thead>
+            <tr>
+                <th></th>
+                <th colspan="2">August</th>
+                
+                <th colspan="2">September</th>
+
+            </tr>
+            <tr>
+                <th></th>
+                <th>KW 34</th>
+                <th>KW 35</th>
+                <th>KW 36</th>
+                <th>KW 37</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <th>Lebensmittel</th>
+                <td>56€</td>
+                <td>73€</td>
+                <td>27€</td>
+                <td>44€</td>
+            </tr>
+            <tr>
+                <th>Werkstatt</th>
+                <td>174€</td>
+                <td>-</td>
+                <td>-</td>
+                <td>56€</td>
+            </tr>
+            <tr>
+                <th>Tierarzt</th>
+                <td>-</td>
+                <td>-</td>
+                <td>223€</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <th>Gesamt:</th>
+                <td colspan="4">653€</td>
+
+
+
+            </tr>
+        </tfoot>
+    </table>
+
+    <h2>HTML-Tag tier list</h2>
+    <p>Sortieren Sie HTML-Tags die Sie kennen nach <em>ihrer persönlichen Beliebtheit</em> ein (S = gut, F = schlecht). Diskutieren Sie mit ihren Sitznachbarn.<br>
+    <small><strong>Tipp:</strong> Nutzen Sie nur zwei Spalten.</small></p>
+
+    <table border>
+        <tr>
+            <th>S</th>
+            <td></td>
+        </tr>
+        <tr>
+            <th>A</th>
+            <td><code>&lt;a></code>, <code>&lt;abbr></code>, <code>&lt;dfn></code>, <code>&lt;strong></code></td>
+        </tr>
+        <tr>
+            <th>B</th>
+            <td><code>&lt;p></code>, <code>&lt;table></code>, <code>&lt;td></code></td>
+        </tr>
+        <tr>
+            <th>C</th>
+            <td><code>&lt;em></code>, <code>&lt;span></code>, <code>&lt;div></code>, <code>&lt;code></code></td>
+        </tr>
+        <tr>
+            <th>D</th>
+            <td></td>
+        </tr>
+        <tr>
+            <th>E</th>
+            <td><code>&lt;hr></code>, <code>&lt;br></code></td>
+        </tr>
+        <tr>
+            <th>F</th>
+            <td></td>
+        </tr>
+        <tr>
+            <th>...</th>
+            <td></td>
+        </tr>
+        <tr>
+            <th>pre-Tier</th>
+            <td><code>&lt;pre></code></td>
+        </tr>
+    </table>
+
+</body>
+</html>
